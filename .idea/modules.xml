@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/GWC_Mortgage_Calculator_Team-4.iml" filepath="$PROJECT_DIR$/.idea/GWC_Mortgage_Calculator_Team-4.iml" />
+
+      <module fileurl="file://$PROJECT_DIR$/.idea/GWC_MortgageCalc_Android.iml" filepath="$PROJECT_DIR$/.idea/GWC_MortgageCalc_Android.iml" />
+
     </modules>
   </component>
 </project>
