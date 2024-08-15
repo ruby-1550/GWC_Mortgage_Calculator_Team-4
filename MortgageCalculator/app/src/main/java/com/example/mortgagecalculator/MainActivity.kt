@@ -18,6 +18,7 @@ import com.example.mortgagecalculator.ui.theme.MortgageCalculatorTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_sign_on)
     }
