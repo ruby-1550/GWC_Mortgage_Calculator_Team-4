@@ -15,6 +15,44 @@ import kotlin.math.pow
 // Import House from HouseData.kt
 import com.example.mortgagecalculator.screens.House
 
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+
+
+import com.example.mortgagecalculator.ui.theme.MortgageCalculatorTheme
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedTextField
+
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
+
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.unit.dp
+
+import androidx.compose.foundation.layout.*
+
+import androidx.compose.runtime.remember
+
+import androidx.compose.foundation.Image
+
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+
+import androidx.compose.ui.unit.dp
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.*
+import com.example.mortgagecalculator.R
+
 @Composable
 fun MortgageCalculatorScreen(house: House) {
     val downPayment = remember { androidx.compose.runtime.mutableStateOf("") }
@@ -22,11 +60,31 @@ fun MortgageCalculatorScreen(house: House) {
     val loanDuration = remember { androidx.compose.runtime.mutableStateOf("") }
     val result = remember { androidx.compose.runtime.mutableStateOf<String?>(null) }
 
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.calculate_background),
+            contentDescription = null, // decorative image
+            contentScale = ContentScale.Crop,
+
+
+        )
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(bottom = 4.dp) // Add bottom padding to move up from the bottom
+                .padding(top = 400.dp)
+        ) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
+            .align(Alignment.BottomCenter), // Align the content to the bottom of the screen
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
         Text(text = "Mortgage Calculator for ${house.price}")
 
         Spacer(modifier = Modifier.height(24.dp))
@@ -74,7 +132,7 @@ fun MortgageCalculatorScreen(house: House) {
             Text(text = "Monthly Payment: $it")
         }
     }
-}
+}}}
 
 fun calculateMortgage(downPayment: Double, loanAmount: Double, loanDuration: Int): String {
     val interestRate = 0.05 // Example interest rate
